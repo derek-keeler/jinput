@@ -46,14 +46,14 @@
 		<property name="dx8libs" value="Kernel32.lib dinput8.lib dxguid.lib User32.lib"/>
 		<property name="commonhome" location="../../../../common"/>
 		
-		<condition property="dx8dllname" value="jinput-dx8.dll" else="jinput-dx8_64.dll">
-			<equals arg1="${os.arch}" arg2="x86"/>
+		<condition property="dx8dllname" value="jinput-dx8_64.dll">
+			<equals arg1="${os.arch}" arg2="x64"/>
 		</condition>
-		<condition property="rawdllname" value="jinput-raw.dll" else="jinput-raw_64.dll">
-			<equals arg1="${os.arch}" arg2="x86"/>
+		<condition property="rawdllname" value="jinput-raw_64.dll">
+			<equals arg1="${os.arch}" arg2="x64"/>
 		</condition>
-		<condition property="sdkhomelib" value="${sdkhome}\lib\${env.WindowsSDKVersion}um\x86" else="${sdkhome}\lib\${env.WindowsSDKVersion}um\x64">
-			<equals arg1="${os.arch}" arg2="x86"/>
+		<condition property="sdkhomelib" value="${sdkhome}\lib\${env.WindowsSDKVersion}um\x64">
+			<equals arg1="${os.arch}" arg2="x64"/>
 		</condition>
 		<antcall target="compile_dir">
 			<param name="compiledir" location="${commonhome}/src/native"/>
